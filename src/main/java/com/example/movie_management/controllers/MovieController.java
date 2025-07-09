@@ -16,15 +16,15 @@ public class MovieController {
     public String renderMoviesHomePage() {
         return """
                 <html>
-                <body>
-                <h2>MOVIES</h2>
-                <ul>
-                """ +
-                moviesList +
+                    <body>
+                        <h2>MOVIES</h2>
+                        <ul>
+             \s"""
+                + moviesList +
                 """
-                </ul>
-                <p><a href='/add' >Add</a> a movie.</p>
-                </body>
+                        </ul>
+                        <p><a href='/add' >Add</a> a movie.</p>
+                    </body>
                 </html>
                 """;
     }
@@ -34,14 +34,14 @@ public class MovieController {
 
         return """
                 <html>
-                <body>
-                <form action='/add' method='POST'>
-                <p>Enter a title and rating for the movie and submit to generate a description.</p>
-                <input type='text' name='title' placeholder='Movie' />
-                <input type='number' name='rating' placeholder='Rating' />
-                <button type='submit'>Submit</button>
-                </form>
-                </body>
+                    <body>
+                        <form action='/add' method='POST'>
+                            <p>Enter a title and rating for the movie and submit to generate a description.</p>
+                            <input type='text' name='title' placeholder='Movie' />
+                            <input type='number' name='rating' placeholder='Rating' />
+                            <button type='submit'>Submit</button>
+                        </form>
+                    </body>
                 </html>
                 """;
     }
@@ -65,13 +65,13 @@ public class MovieController {
 
         return """
                 <html>
-                <body>
-                <h3>Movie added</h3>
-                """ +
-                "<p>You have successfully added " + title + " (Rating: " + rating + ")" + " to the collection.</p>" +
-                """
-                <p><a href='/add'>Add</a> another movie or view the <a href='/'>updated list</a> of movies.</p>
-                </body>
+                    <body>
+                        <h3>Movie added</h3>
+                       \s""" +
+                        "<p>You have successfully added " + title + " (Rating: " + rating + ")" + " to the collection.</p>" +
+                        """
+                        <p><a href='/add'>Add</a> another movie or view the <a href='/'>updated list</a> of movies.</p>
+                    </body>
                 </html>
                 """;
     }
